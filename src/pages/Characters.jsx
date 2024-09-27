@@ -1,7 +1,12 @@
 import React from "react";
+import Title from "../components/Title";
 
-function Characters() {
-  return <div>Characters</div>;
+function Characters({ title }) {
+  return (
+    <main>
+      <Title title={"Characters"} />
+    </main>
+  );
 }
 
 export default Characters;
