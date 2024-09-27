@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../components/Title";
 import Quote from "../components/Quote";
+import Logo from "../components/Logo";
 
 function Episodes({ title }) {
   return (
@@ -11,6 +12,7 @@ function Episodes({ title }) {
         spokenBy={"Episodes spokenBy"}
         inEp={"Episodes inEp"}
       />
+      <Logo />
     </main>
   );
 }
