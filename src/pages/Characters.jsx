@@ -42,7 +42,9 @@ function Characters({ title }) {
       </section>
 
       <section className={`Characters__details ${open ? "open" : ""}`}>
-        <button onClick={() => setOpen(false)}>X</button>
+        <button onClick={() => setOpen(false)}>
+          <i className="ri-close-large-fill"></i>
+        </button>
         <h2>{selectedCharacter.name}</h2>
         <p>{selectedCharacter.description}</p>
         <img src={`/characters/${selectedCharacter.imgSrc}`} alt="" />
