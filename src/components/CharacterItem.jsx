@@ -1,9 +1,9 @@
 import React from "react";
 
-function CharacterItem({ name, imgSrc }) {
+function CharacterItem({ name, imgSrc, onClick }) {
   return (
     <div>
-      <button>
+      <button onClick={onClick}>
         <img src={`/characters/${imgSrc}`} alt={`still photo of ${name}`} />
       </button>
       <span>{name}</span>
