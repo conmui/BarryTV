@@ -27,6 +27,19 @@ function App() {
           <Route path="/episodes" element={<Episodes />} />
         </Routes>
       </Router>
+      <footer>
+        <p>Content from</p>
+        <ul>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Barry_(TV_series)">
+              Wikipedia
+            </a>
+          </li>
+          <li>
+            <a href="https://barry-hbo.fandom.com/wiki/Barry_Wiki">Fandom</a>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 }
