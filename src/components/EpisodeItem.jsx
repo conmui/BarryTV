@@ -1,14 +1,13 @@
 import React from "react";
 
-function EpisodeItem({ data }) {
+function EpisodeItem({ data, onClick }) {
   return (
     <li>
-      <button>
+      <button onClick={onClick}>
         <span>
-          {data.season} {data.episode}
+          Season {data.season} Episode {data.episode}
         </span>
-        <span>{data.title}</span>
-        <img src={`/episodes/s${data.season}-e${data.episode}.png`} alt="" />
+        <span>"{data.title}"</span>
       </button>
     </li>
   );
