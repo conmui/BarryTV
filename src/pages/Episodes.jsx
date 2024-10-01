@@ -2,60 +2,71 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Title from "../components/Title";
 import Quote from "../components/Quote";
+import EpisodeItem from "../components/EpisodeItem";
 import Logo from "../components/Logo";
 import episodes from "/src/data/episodes.json";
-import EpisodeItem from "../components/EpisodeItem";
+import "/src/pages/Episodes.css";
 
-function Episodes({ title }) {
+function Episodes() {
   const [selectedEpisode, setSelectedEpisode] = useState(episodes[0]);
 
   return (
-    <main>
-      <section>
+    <main className="Episodes">
+      <div className="Episodes__heading">
         <Title title={"Episodes"} />
         <Quote
           quote={"Episodes quote"}
           spokenBy={"Episodes spokenBy"}
           inEp={"Episodes inEp"}
         />
-      </section>
+      </div>
+      <section className="Episodes__content">
+        <div className="Episodes__content__details">
+          <h2 className="Episodes__content__details-title">
+            "{selectedEpisode.title}"
+          </h2>
 
-      <section>
-        <h2>"{selectedEpisode.title}"</h2>
+          <ul className="Episodes__content__details-list">
+            <li className="Episodes__content__details-list-item">
+              <span>Season</span> {selectedEpisode.season}
+            </li>
+            <li className="Episodes__content__details-list-item">
+              <span>Episode</span> {selectedEpisode.episode}
+            </li>
+            <li className="Episodes__content__details-list-item">
+              <span>Directed by</span> {selectedEpisode.directedBy}
+            </li>
+            <li className="Episodes__content__details-list-item">
+              <span>Written by</span> {selectedEpisode.writtenBy}
+            </li>
+            <li className="Episodes__content__details-list-item">
+              <span>Original air date</span> {selectedEpisode.airDate}
+            </li>
+          </ul>
 
-        <ul>
-          <li>
-            <span>Season</span> {selectedEpisode.season}
-          </li>
-          <li>
-            <span>Episode</span> {selectedEpisode.episode}
-          </li>
-          <li>
-            <span>Directed by</span> {selectedEpisode.directedBy}
-          </li>
-          <li>
-            <span>Written by</span> {selectedEpisode.writtenBy}
-          </li>
-          <li>
-            <span>Original air date</span> {selectedEpisode.airDate}
-          </li>
-        </ul>
-        <p>{selectedEpisode.summary}</p>
-        <img
-          src={`/episodes/s${selectedEpisode.season}-e${selectedEpisode.episode}.png`}
-          alt=""
-        />
+          <p className="Episodes__content__details-summary">
+            {selectedEpisode.summary}
+          </p>
 
-        <ul>
-          {episodes.map((item) => (
-            <EpisodeItem
-              key={item.id}
-              data={item}
-              onClick={() => setSelectedEpisode(item)}
-            />
-          ))}
-        </ul>
-        <Logo />
+          <img
+            className="Episodes__content__details-image"
+            src={`/episodes/s${selectedEpisode.season}-e${selectedEpisode.episode}.png`}
+            alt=""
+          />
+        </div>
+
+        <div className="Episodes__content__listing">
+          <ul className="Episodes__content__listing-list">
+            {episodes.map((item) => (
+              <EpisodeItem
+                key={item.id}
+                data={item}
+                onClick={() => setSelectedEpisode(item)}
+              />
+            ))}
+          </ul>
+          <Logo />
+        </div>
       </section>
     </main>
   );

@@ -6,7 +6,7 @@ function Quote({ quote, spokenBy, inEp }) {
     <div className="Quote">
       <p className="Quote__text">{quote}</p>
       <p className="Quote__reference">
-        — {spokenBy}, Barry, {inEp}
+        — {spokenBy}, Barry {inEp}
       </p>
     </div>
   );
