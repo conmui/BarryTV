@@ -1,0 +1,35 @@
+.CharacterItem__btn {
+  width: 100%;
+}
+
+.CharacterItem__btn-image {
+  border-radius: 0.4rem;
+}
+
+.CharacterItem__btn-name {
+  display: inline-block;
+  margin: 0.8rem 0;
+}
+
+@media (min-width: 760px) {
+  .CharacterItem {
+    flex: 1 1 40%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .CharacterItem__btn {
+    transition: all 0.2s ease-out;
+  }
+
+  .CharacterItem__btn:hover {
+    color: var(--red);
+    font-weight: 900;
+    letter-spacing: -1px;
+    filter: opacity(0.8);
+  }
+
+  .CharacterItem {
+    flex: 1 1 20%;
+  }
+}
