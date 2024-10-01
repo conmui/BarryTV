@@ -2,12 +2,12 @@ import React from "react";
 import { useState } from "react";
 import Title from "../components/Title";
 import Quote from "../components/Quote";
+import CharacterItem from "../components/CharacterItem";
 import Logo from "../components/Logo";
 import characters from "/src/data/characters.json";
-import CharacterItem from "../components/CharacterItem";
 import "/src/pages/Characters.css";
 
-function Characters({ title }) {
+function Characters() {
   const [selectedCharacter, setSelectedCharacter] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -17,38 +17,53 @@ function Characters({ title }) {
   };
 
   return (
-    <main>
-      <section>
-        <Title title={"Characters"} />
+    <main className="Characters">
+      <div className="Characters__heading">
+        <Title text={"Characters"} />
         <Quote
-          quote={"Characters quote"}
-          spokenBy={"Characters spokenBy"}
-          inEp={"Characters inEp"}
+          quote={'"Like a good leader, I\'m gonna get us some Ubers."'}
+          spokenBy={"NoHo Hank"}
+          inEp={"Season 2: The Audition"}
         />
-      </section>
+      </div>
 
-      <section>
-        <ul>
-          {characters.map((item) => (
-            <CharacterItem
-              key={item.id}
-              name={item.name}
-              imgSrc={item.imgSrc}
-              onClick={() => handleCharacter(item)}
+      <div className="Characters__content">
+        <section className="Characters__listing">
+          <ul className="Characters__listing-list">
+            {characters.map((item) => (
+              <CharacterItem
+                key={item.id}
+                name={item.name}
+                imgSrc={item.imgSrc}
+                onClick={() => handleCharacter(item)}
+              />
+            ))}
+          </ul>
+          <Logo />
+        </section>
+
+        <section className={`Characters__details ${open ? "open" : ""}`}>
+          <div className="Characters__details-content">
+            <button
+              className="Characters__details-btn"
+              onClick={() => setOpen(false)}
+            >
+              <i className="ri-close-large-fill"></i>
+            </button>
+            <h2 className="Characters__details-name">
+              {selectedCharacter.name}
+            </h2>
+            <p className="Characters__details-description">
+              {selectedCharacter.description}
+            </p>
+            <img
+              className="Characters__details-image"
+              src={`/characters/${selectedCharacter.imgSrc}`}
+              alt=""
             />
-          ))}
-        </ul>
-        <Logo />
-      </section>
-
-      <section className={`Characters__details ${open ? "open" : ""}`}>
-        <button onClick={() => setOpen(false)}>
-          <i className="ri-close-large-fill"></i>
-        </button>
-        <h2>{selectedCharacter.name}</h2>
-        <p>{selectedCharacter.description}</p>
-        <img src={`/characters/${selectedCharacter.imgSrc}`} alt="" />
-      </section>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
