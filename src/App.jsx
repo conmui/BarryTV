@@ -31,12 +31,20 @@ function App() {
         <p className="App__footer-ref">Content from</p>
         <ul className="App__footer-list">
           <li className="App__footer-item">
-            <a href="https://en.wikipedia.org/wiki/Barry_(TV_series)">
+            <a
+              href="https://en.wikipedia.org/wiki/Barry_(TV_series)"
+              target="_blank"
+            >
               Wikipedia
             </a>
           </li>
           <li className="App__footer-item">
-            <a href="https://barry-hbo.fandom.com/wiki/Barry_Wiki">Fandom</a>
+            <a
+              href="https://barry-hbo.fandom.com/wiki/Barry_Wiki"
+              target="_blank"
+            >
+              Fandom
+            </a>
           </li>
         </ul>
       </footer>
