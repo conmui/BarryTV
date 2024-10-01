@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Title from "../components/Title";
 import Quote from "../components/Quote";
 import EpisodeItem from "../components/EpisodeItem";
@@ -15,9 +15,9 @@ function Episodes() {
       <div className="Episodes__heading">
         <Title title={"Episodes"} />
         <Quote
-          quote={"Episodes quote"}
-          spokenBy={"Episodes spokenBy"}
-          inEp={"Episodes inEp"}
+          quote={"What?!"}
+          spokenBy={"Barry Berkman"}
+          inEp={"Season 2: What?!"}
         />
       </div>
       <section className="Episodes__content">

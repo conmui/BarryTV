@@ -19,7 +19,7 @@ function Characters() {
   return (
     <main className="Characters">
       <div className="Characters__heading">
-        <Title text={"Characters"} />
+        <Title title={"Characters"} />
         <Quote
           quote={'"Like a good leader, I\'m gonna get us some Ubers."'}
           spokenBy={"NoHo Hank"}
